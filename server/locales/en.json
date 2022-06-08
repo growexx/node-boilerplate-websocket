@@ -1,0 +1,11 @@
+{
+	"SUCCESS": "Success",
+	"REGISTER_FAILED":"Registration Failed (Token Expired/Invalid)",
+	"UNAUTHORIZED": "User unauthorized",
+	"AUTHORIZED": "User authorized",
+	"INVALID_REQUEST": "Request is invalid",
+	"FIELD_REQUIRED": "%s is required",
+	"FIELD_NOT_VALID": "%s is not valid.",
+	"ERROR_MSG": "Something went wrong. please try again.",
+	"ACCESS_DENIED": "You are not authorized to access this resource."
+}

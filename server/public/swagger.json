@@ -1,0 +1,23 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "development environment hostname :  api.cca.com",
+    "version": "1.0.0",
+    "title": "CheatCode Chart API Docs"
+  },
+  "basePath": "v1",
+  "securityDefinitions": {
+    "bearerAuth": {
+      "name": "Authorization",
+      "type": "apiKey",
+      "in": "header",
+      "bearerFormat": "JWT"
+    }
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {},
+  "definitions": {}
+}

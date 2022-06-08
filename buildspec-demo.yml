@@ -1,0 +1,51 @@
+version: 0.2
+environment_variables:
+  plaintext:
+    S3_BUCKET: 'demo-websocket-services-artifacts'
+    projectKey: "cheatcode-websocket-be"
+    projctVersion: "Sprint-1"
+    projectName: "cheatcode-chart-be"
+env:
+  parameter-store:
+    GITHUB_TOKEN: "GITHUB_TOKEN"
+    SONAR_TOKEN: "SONAR_TOKEN"
+    SONAR_HOST: "SONAR_HOST"
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14.x
+
+  pre_build:
+    commands:
+      - cd cca_websocket
+      - npm install
+  build:
+    commands:
+            #      - echo Build started on `date`
+            #      - echo Running unit tests
+            #      - npm test
+            #      - echo Runnng sonar-scanner on `date`
+            #      - curl ifconfig.co
+            #      - aws s3 cp s3://$S3_BUCKET/config/sonar-scanner-cli-4.0.0.1744-linux.zip .
+            #      - unzip sonar-scanner-cli-4.0.0.1744-linux.zip
+            #      - cp sonar-scanner.properties sonar-scanner-4.0.0.1744-linux/conf/sonar-scanner.properties
+            #      - echo $SONAR_HOST
+            #      - ./sonar-scanner-4.0.0.1744-linux/bin/sonar-scanner -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$projectKey -Dsonar.projectVersion=$projectVersion
+            #      - echo Running semantic release on `date`
+            #      - npx semantic-release --debug --no-ci
+            #      - echo Building the Docker image...
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+    
+cache:
+  paths:
+    - 'node_modules/**/*'
+
+artifacts:
+    enable-symlinks: yes
+    files:
+        - "**/*"
+    name: "demo-websocket-ci-build"
+    base-directory: 'cca_websocket'
