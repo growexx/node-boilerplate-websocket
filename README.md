@@ -1,10 +1,5 @@
-***CCA Charting
 # Node boilerplate
-This is a nodejs boilerplate with Websocket Implementation. This boilerplate has following features:
-- User Authentication
-- IEX SSE Calls Integration Using WebSockets
-- POLYGON Websocket Calls
-- Twelve Data WebSocket Calls
+This is a nodejs boilerplate with Websocket Implementation.
 
 ---
 ## Requirements
@@ -56,8 +51,16 @@ Create an environment file with extension ```.env```.
 - Change DB_HOST
 - If you have DB Username add ```DB_USERNAME={VALUE}``` and ```DB_PASSWORD={VALUE}``` to your env file
 - Similarly change other fields as per your need.
+- The code for the socket functions is inside `utils/socket.js`. Modify it as per your need to add/remove socket functionalities. 
 
 ## Running the project
 
 - To execute the code, run the following command ```npm start```
 - Run the command ```npm t``` for testing
+
+## Connecting to the server
+
+- To register a user, send a json message to the server as shown  `{"action": "registerUser", "jwt": "jwt token"}`
+- If the token is verified, the server will respond with a message containing a `token`
+- To receive data, send a json message to the server as shown `{"action": "sendData", "token": "token"}`
+- To disconnect the client, send a json message to the server as shown `{"action": "disconnectUser"}`
